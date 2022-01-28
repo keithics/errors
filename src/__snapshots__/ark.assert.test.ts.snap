@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Ark Error Handler Tests 404 Error Tests - should NOT return error 404 if value is NOT null,false or empty 1`] = `Object {}`;
+
+exports[`Ark Error Handler Tests 404 Error Tests - should NOT return error 404 if value is NOT null,false or empty 2`] = `Object {}`;
+
+exports[`Ark Error Handler Tests 404 Error Tests - should return error 404 if value is null.false or empty 1`] = `"404 Not Found"`;
+
+exports[`Ark Error Handler Tests 404 Error Tests - should return error 404 if value is null.false or empty 2`] = `"404 Not Found"`;
+
+exports[`Ark Error Handler Tests 404 Error Tests - should return error 404 if value is null.false or empty 3`] = `"404 Not Found"`;
+
+exports[`Ark Error Handler Tests 500 Error Tests - should NOT return error 500 if value is NOT null,false or empty 1`] = `Object {}`;
+
+exports[`Ark Error Handler Tests 500 Error Tests - should NOT return error 500 if value is NOT null,false or empty 2`] = `Object {}`;
+
+exports[`Ark Error Handler Tests 500 Error Tests - should return error 500 if value is null.false or empty 1`] = `"An Error Occurred"`;
+
+exports[`Ark Error Handler Tests 500 Error Tests - should return error 500 if value is null.false or empty 2`] = `"An Error Occurred"`;
+
+exports[`Ark Error Handler Tests 500 Error Tests - should return error 500 if value is null.false or empty 3`] = `"An Error Occurred"`;
+
+exports[`Ark Error Handler Tests Validation Error Tests - should not return an error if object is not empty or true 1`] = `Object {}`;
+
+exports[`Ark Error Handler Tests Validation Error Tests - should not return an error if object is not empty or true 2`] = `Object {}`;
+
+exports[`Ark Error Handler Tests Validation Error Tests - should return error if object is null, false or an empty object 1`] = `"Object is required"`;
+
+exports[`Ark Error Handler Tests Validation Error Tests - should return error if object is null, false or an empty object 2`] = `"Object is required"`;
+
+exports[`Ark Error Handler Tests Validation Error Tests - should return error if object is null, false or an empty object 3`] = `"Object is required"`;

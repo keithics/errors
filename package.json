@@ -1,12 +1,12 @@
 {
   "name": "@signalyticsai/errors",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Signalytics Error handing and Error codes",
   "main": "index.js",
   "scripts": {
     "test": "NODE_PATH=./src ./node_modules/.bin/jest --coverage --verbose --runInBand --forceExit --detectOpenHandles",
     "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "./node_modules/.bin/prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "./node_modules/.bin/eslint . --ext .js,.jsx,.ts,.tsx && ./node_modules/.bin/prettier --check **/*.{js,ts} && tsc --noEmit",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
@@ -52,5 +52,7 @@
     "@sentry/node": "^6.17.2",
     "lodash.isempty": "^4.4.0"
   },
-  "files": ["/lib/**/*"]
+  "files": [
+    "/lib/**/*"
+  ]
 }

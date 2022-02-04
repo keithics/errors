@@ -1,3 +1,5 @@
+import * as _ from 'lodash';
+
 /**
  * Usage: arkAssert(object,MyError,'optional message)
  * eg: arkAssert(user,ArkValidationError,'User is not found)
@@ -11,9 +13,7 @@
   });
 
  */
-interface ErrorConstructor {
-  captureStackTrace(thisArg: any, func: any): void
-}
+
 /**
  class T - placeholder
  **/
@@ -26,7 +26,7 @@ class T {}
  * @param message optionally a custom error message
  */
 export const arkAssert = (value, error: new (...any: unknown[]) => T, message = '') => {
-  if (value === true || isEmpty(value)) {
+  if (value === true || !_.isEmpty(value)) {
     return true;
   }
   throw new error(message);
@@ -96,17 +96,9 @@ export class ArkErrorInvalidToken extends ArkError {
  * @private
  */
 export const arkValidateAssert = (value, message) => {
-  if (isEmpty(value)) {
+  if (_.isEmpty(value)) {
     throw new ArkErrorValidation(message);
   }
 
   return true;
 };
-
-const isEmpty = value => {
-  return (
-      value == null || // From standard.js: Always use === - but obj == null is allowed to check null || undefined
-      (typeof value === 'object' && Object.keys(value).length === 0) ||
-      (typeof value === 'string' && value.trim().length === 0)
-  )
-}

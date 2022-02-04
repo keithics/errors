@@ -4,3 +4,4 @@ jest*
 dist/
 documentation/
 .eslintrc.js
+lib

@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_PATH=./src ./node_modules/.bin/jest --coverage --verbose --runInBand --forceExit --detectOpenHandles",
-    "build": "tsc --build --clean",
+    "build": "tsc",
+    "p": "npm version patch && npm publish",
     "format": "./node_modules/.bin/prettier --write **/*.{js,ts}",
     "lint": "./node_modules/.bin/eslint . --ext .js,.jsx,.ts,.tsx && ./node_modules/.bin/prettier --check **/*.{js,ts} && tsc --noEmit",
     "prepare": "npm run build",
-    "p": "npm version patch && npm publish",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "@sentry/node": "^6.17.2",
-    "lodash": "^4.4.0"
+    "lodash.isempty": "^4.4.0"
   },
   "files": [
     "/lib/**/*"

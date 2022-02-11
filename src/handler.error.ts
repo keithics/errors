@@ -36,6 +36,7 @@ function errorHandler(err, req, res, next) {
   // different errors and statuses
   if (statusCode < 500) return res.jsonp({ message, error: true });
   if (statusCode === 11000) return res.status(422).jsonp(getUniqueErrorMessage(err));
+  if (err.name === 'JsonWebTokenError') return res.status(401).jsonp({ message: 'Invalid JWT', error: true });
   Sentry.captureException(message);
   return res.jsonp({ error: true, statusCode, message });
 }

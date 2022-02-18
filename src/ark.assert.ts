@@ -59,9 +59,8 @@ export class ArkErrorOther extends ArkError {
 export class ArkErrorValidation extends ArkError {
   constructor(message) {
     super(message);
-    this.name = 'ArkValidationError';
+    this.name = 'ArkErrorValidation';
     this.code = 422;
-    // Error.captureStackTrace(this, ArkValidationError);
   }
 }
 
@@ -84,8 +83,10 @@ export class ArkErrorNotFound extends ArkError {
 export class ArkErrorInvalidToken extends ArkError {
   constructor(message) {
     super(message);
-    this.name = 'ArkValidationError';
+    this.name = 'ArkErrorInvalidToken';
     this.code = 401;
+    this.message = 'JWT Token is invalid';
+    Error.captureStackTrace(this, ArkErrorInvalidToken);
   }
 }
 

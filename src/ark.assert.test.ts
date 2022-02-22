@@ -16,13 +16,8 @@ describe('Ark Error Handler Tests', () => {
   });
 
   test('Validation Error Tests - should not return an error if object is not empty or true', () => {
-    expect(() => {
-      return arkAssert(true, ArkErrorValidation, 'Object is required');
-    }).toMatchSnapshot();
-
-    expect(() => {
-      return arkAssert({ name: 'name' }, ArkErrorValidation, 'Object is required');
-    }).toMatchSnapshot();
+    expect(arkAssert(true, ArkErrorValidation, 'Object is required')).toMatchSnapshot();
+    expect(arkAssert({ name: 'name' }, ArkErrorValidation, 'Object is required')).toMatchSnapshot();
   });
 
   test('404 Error Tests - should return error 404 if value is null.false or empty', () => {
@@ -40,13 +35,8 @@ describe('Ark Error Handler Tests', () => {
   });
 
   test('404 Error Tests - should NOT return error 404 if value is NOT null,false or empty', () => {
-    expect(() => {
-      return arkAssert(true, ArkErrorNotFound);
-    }).toMatchSnapshot();
-
-    expect(() => {
-      return arkAssert({ name: 'name' }, ArkErrorNotFound);
-    }).toMatchSnapshot();
+    expect(arkAssert(true, ArkErrorNotFound)).toMatchSnapshot();
+    expect(arkAssert({ name: 'name' }, ArkErrorNotFound)).toMatchSnapshot();
   });
 
   test('500 Error Tests - should return error 500 if value is null.false or empty', () => {
@@ -64,12 +54,14 @@ describe('Ark Error Handler Tests', () => {
   });
 
   test('500 Error Tests - should NOT return error 500 if value is NOT null,false or empty', () => {
-    expect(() => {
-      return arkAssert(true, ArkErrorOther);
-    }).toMatchSnapshot();
+    expect(arkAssert(true, ArkErrorOther)).toMatchSnapshot();
+    expect(arkAssert({ name: 'name' }, ArkErrorOther)).toMatchSnapshot();
+  });
 
-    expect(() => {
-      return arkAssert({ name: 'name' }, ArkErrorOther);
-    }).toMatchSnapshot();
+  test('500 Error Tests - should NOT return error 500 if value is a STRING or NUMBER', () => {
+    expect(arkAssert(1, ArkErrorOther)).toMatchSnapshot();
+    expect(arkAssert('this is a string', ArkErrorOther)).toMatchSnapshot();
+    expect(arkAssert([1, 2, 3, 4], ArkErrorOther)).toMatchSnapshot();
+    expect(arkAssert(['1', 'this is an array of string'], ArkErrorOther)).toMatchSnapshot();
   });
 });

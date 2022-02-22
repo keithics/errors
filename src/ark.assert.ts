@@ -21,12 +21,12 @@ class T {}
 
 /**
  * Checks if the first parameter is false, empty object, collection, map, or set. and returns error
- * @param value Object to be evaluated
+ * @param value Object,string,number, boolean or string to be evaluated
  * @param error ArkError
  * @param message optionally a custom error message
  */
 export const arkAssert = (value, error: new (...any: unknown[]) => T, message = '') => {
-  if (value === true || !_.isEmpty(value)) {
+  if (value === true || typeof value === 'number' || !_.isEmpty(value)) {
     return true;
   }
   throw new error(message);
@@ -46,7 +46,7 @@ export class ArkError extends Error {
 export class ArkErrorOther extends ArkError {
   constructor(message) {
     super(message);
-    this.name = 'ArkValidationOther';
+    this.name = 'ArkErrorOther';
     this.message = message || 'An Error Occurred';
     this.code = 500;
     Error.captureStackTrace(this, ArkErrorOther);
@@ -89,17 +89,3 @@ export class ArkErrorInvalidToken extends ArkError {
     Error.captureStackTrace(this, ArkErrorInvalidToken);
   }
 }
-
-/**
- * check if message if the message is not empty
- * @param message
- * @param value
- * @private
- */
-export const arkValidateAssert = (value, message) => {
-  if (_.isEmpty(value)) {
-    throw new ArkErrorValidation(message);
-  }
-
-  return true;
-};

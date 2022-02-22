@@ -36,7 +36,7 @@ function errorHandler(err, req, res, next) {
   ];
 
   const statusCode =
-    validStatusCode.includes(err?.code || 500) && Object.prototype.isPrototypeOf.call(err, 'code')
+    validStatusCode.includes(err?.code || 500) && Object.prototype.hasOwnProperty.call(err, 'code')
       ? err.code
       : 500;
   const message: ArkErrorInterface = err.message || 'An error occurred';

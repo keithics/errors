@@ -1,6 +1,6 @@
 {
   "name": "@signalyticsai/errors",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Signalytics Error handing and Error codes",
   "main": "index.js",
   "scripts": {

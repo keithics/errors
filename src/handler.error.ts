@@ -25,7 +25,7 @@ function getUniqueErrorMessage(err): ArkErrorInterface {
  */
 // eslint-disable-next-line consistent-return
 function errorHandler(err, req, res, next) {
-  if (req.originalUrl && req.originalUrl.split("/").pop() === 'favicon.ico') {
+  if (req.originalUrl && req.originalUrl.split('/').pop() === 'favicon.ico') {
     return res.sendStatus(204);
   }
 

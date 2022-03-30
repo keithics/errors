@@ -10,6 +10,8 @@ exports[`Ark Error Handler Tests 404 Error Tests - should return error 404 if va
 
 exports[`Ark Error Handler Tests 404 Error Tests - should return error 404 if value is null.false or empty 3`] = `"404 Not Found"`;
 
+exports[`Ark Error Handler Tests 418 Error Tests - should return html 1`] = `true`;
+
 exports[`Ark Error Handler Tests 500 Error Tests - should NOT return error 500 if value is NOT null,false or empty 1`] = `true`;
 
 exports[`Ark Error Handler Tests 500 Error Tests - should NOT return error 500 if value is NOT null,false or empty 2`] = `true`;

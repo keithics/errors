@@ -1,4 +1,10 @@
-import { arkAssert, ArkErrorNotFound, ArkErrorOther, ArkErrorValidation } from './ark.assert';
+import {
+  arkAssert,
+  ArkErrorNotFound,
+  ArkErrorOther,
+  ArkErrorTeapot,
+  ArkErrorValidation,
+} from './ark.assert';
 
 describe('Ark Error Handler Tests', () => {
   test('Validation Error Tests - should return error if object is null, false or an empty object', () => {
@@ -37,6 +43,10 @@ describe('Ark Error Handler Tests', () => {
   test('404 Error Tests - should NOT return error 404 if value is NOT null,false or empty', () => {
     expect(arkAssert(true, ArkErrorNotFound)).toMatchSnapshot();
     expect(arkAssert({ name: 'name' }, ArkErrorNotFound)).toMatchSnapshot();
+  });
+
+  test('418 Error Tests - should return html', () => {
+    expect(arkAssert(true, ArkErrorTeapot, 'This is a sample html error')).toMatchSnapshot();
   });
 
   test('500 Error Tests - should return error 500 if value is null.false or empty', () => {

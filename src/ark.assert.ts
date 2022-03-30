@@ -87,7 +87,7 @@ export class ArkErrorTeapot extends ArkError {
     super(message);
     this.name = 'ArkErrorTeapot';
     this.code = 418;
-    this.message = 'ArkErrorTeapot';
+    this.message = message || 'ArkErrorTeapot';
     Error.captureStackTrace(this, ArkErrorTeapot);
   }
 }

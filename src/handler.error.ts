@@ -48,12 +48,13 @@ function errorHandler(err, req, res, next) {
   res.status(statusCode);
 
   // different errors and statuses
+  if (statusCode === 418 && err.name === 'ArkErrorTeapot') return res.render('error', { message });
   if (statusCode < 500) return res.jsonp({ message, error: true });
   if (statusCode === 11000) return res.status(422).jsonp(getUniqueErrorMessage(err));
-  if (err.name === 'JsonWebTokenError')
+  if (err.name === 'JsonWebTokenError') {
     return res.status(401).jsonp({ message: 'Invalid JWT', error: true });
+  }
   // render html for teapot error
-  if (statusCode === 418 && err.name === 'ArkErrorTeapot') return res.render('error', { message });
 
   // we are only going to send sentry erorrs for errors below
   Sentry.captureException(message);

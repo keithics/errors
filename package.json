@@ -1,7 +1,7 @@
 {
-  "name": "@signalyticsai/errors",
+  "name": "@keithics/errors",
   "version": "2.0.5",
-  "description": "Signalytics Error handing and Error codes",
+  "description": "Error handing and Error codes",
   "main": "index.js",
   "scripts": {
     "test": "NODE_PATH=./src ./node_modules/.bin/jest --coverage --verbose --runInBand --forceExit --detectOpenHandles",
@@ -44,13 +44,14 @@
     "prettier": "^2.3.0",
     "pretty-format": "^26.6.2",
     "ts-jest": "^26.5.6",
-    "ts-node": "^9.1.1",
-    "ts-node-dev": "^1.1.8",
+    "ts-node": "^10.8.0",
+    "ts-node-dev": "^2.0.0",
     "tslint": "^6.1.3",
-    "typescript": "^4.4.4"
+    "typescript": "^4.7.2"
   },
   "dependencies": {
     "@sentry/node": "^6.17.2",
+    "lodash": "^4.17.21",
     "lodash.isempty": "^4.4.0"
   },
   "files": [

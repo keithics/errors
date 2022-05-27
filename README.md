@@ -1,6 +1,15 @@
-#Signalytics Error Package
+#Error Package
 
 Handles most of the express catch in all routes and errors.
+
+# How to use
+```
+export const profile = catchAsync(async (req: Request, res: Response) => {
+    const user = await User.findById(req.user);
+    arkAssert(user, ErrorNotFound);
+    return res.jsonp(user);
+});
+```
 
 #Requirements
 1. GitHub personal tokens

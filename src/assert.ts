@@ -92,8 +92,6 @@ export class ErrorTeapot extends KError {
   }
 }
 
-
-
 /**
  * Unauthorized Error
  */

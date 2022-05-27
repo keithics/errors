@@ -6,6 +6,7 @@
   "scripts": {
     "test": "NODE_PATH=./src ./node_modules/.bin/jest --coverage --verbose --runInBand --forceExit --detectOpenHandles",
     "build": "tsc",
+    "pretty": "npx prettier --write ./src",
     "p": "npm version patch && npm publish",
     "format": "./node_modules/.bin/prettier --write **/*.{js,ts}",
     "lint": "./node_modules/.bin/eslint . --ext .js,.jsx,.ts,.tsx && ./node_modules/.bin/prettier --check **/*.{js,ts} && tsc --noEmit",

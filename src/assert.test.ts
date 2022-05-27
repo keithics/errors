@@ -1,10 +1,4 @@
-import {
-  assert,
-  ErrorNotFound,
-  ErrorOther,
-  ErrorTeapot,
-  ErrorValidation,
-} from './assert';
+import { assert, ErrorNotFound, ErrorOther, ErrorTeapot, ErrorValidation } from './assert';
 
 describe('Ark Error Handler Tests', () => {
   test('Validation Error Tests - should return error if object is null, false or an empty object', () => {

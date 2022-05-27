@@ -93,6 +93,21 @@ export class ErrorTeapot extends KError {
 }
 
 /**
+ * Errors that will not send back as json header type
+ * useful if the service is not an API
+ * used in funnel pages where error responses are html pages
+ */
+export class ArkErrorTeapot extends ArkError {
+  constructor(message) {
+    super(message);
+    this.name = 'ArkErrorTeapot';
+    this.code = 418;
+    this.message = message || 'ArkErrorTeapot';
+    Error.captureStackTrace(this, ArkErrorTeapot);
+  }
+}
+
+/**
  * Unauthorized Error
  */
 export class ErrorInvalidToken extends KError {

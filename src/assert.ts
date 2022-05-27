@@ -2,13 +2,13 @@ import * as _ from 'lodash';
 
 /**
  * Usage: assert(object,MyError,'optional message)
- * eg: arkAssert(user,ArkValidationError,'User is not found)
+ * eg: assert(user,ArkValidationError,'User is not found)
  *  Must be used in conjunction with catchAsync
  *
  *
  export const profile = catchAsync(async (req: Request, res: Response) => {
     const user = await User.findById(req.user);
-    arkAssert(user, ErrorNotFound);
+    assert(user, ErrorNotFound);
     return res.jsonp(user);
   });
 
@@ -92,20 +92,7 @@ export class ErrorTeapot extends KError {
   }
 }
 
-/**
- * Errors that will not send back as json header type
- * useful if the service is not an API
- * used in funnel pages where error responses are html pages
- */
-export class ArkErrorTeapot extends ArkError {
-  constructor(message) {
-    super(message);
-    this.name = 'ArkErrorTeapot';
-    this.code = 418;
-    this.message = message || 'ArkErrorTeapot';
-    Error.captureStackTrace(this, ArkErrorTeapot);
-  }
-}
+
 
 /**
  * Unauthorized Error

@@ -18,17 +18,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/SignalyticsAI/errors.git"
+    "url": "git+ssh://git@github.com/keithics/errors.git"
   },
   "author": "keithics",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SignalyticsAI/errors/issues"
+    "url": "https://github.com/keithics/errors/issues"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
-  "homepage": "https://github.com/SignalyticsAI/errors#readme",
+  "homepage": "https://github.com/keithics/errors#readme",
   "devDependencies": {
     "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^5.10.2",

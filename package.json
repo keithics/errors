@@ -1,6 +1,6 @@
 {
   "name": "@keithics/errors",
-  "version": "6.3",
+  "version": "6.3.0",
   "description": "Error handing and Error codes",
   "main": "index.js",
   "scripts": {
